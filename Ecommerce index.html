@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RABIZUL STORE | Smart Affiliate Shopping</title>
+
+<meta name="description"
+content="RABIZUL STORE helps you discover useful products, deals and shopping recommendations from trusted partner stores.">
+
+<meta name="robots" content="index, follow">
+
+<meta name="author" content="RABIZUL STORE">
+
+<meta property="og:title" content="RABIZUL STORE | Smart Affiliate Shopping">
+<meta property="og:description" content="Discover useful products and shopping recommendations.">
+<meta property="og:type" content="website">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+    line-height:1.6;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#0b1220;
+    box-shadow:0 4px 20px rgba(0,0,0,.18);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+nav{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:#e5e7eb;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:470px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:70px 20px;
+
+    background:
+    linear-gradient(rgba(2,6,23,.86),rgba(2,6,23,.9)),
+    url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 15px;
+    border-radius:30px;
+    background:#38bdf8;
+    color:#082f49;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:50px;
+    line-height:1.15;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#38bdf8;
+}
+
+.hero p{
+    color:#dbeafe;
+    font-size:18px;
+    margin-bottom:28px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:14px 25px;
+    background:#38bdf8;
+    color:#082f49;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* ================= DISCLOSURE ================= */
+
+.disclosure{
+    max-width:1200px;
+    margin:25px auto 0;
+    padding:15px 20px;
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+    color:#7c2d12;
+    border-radius:7px;
+    font-size:14px;
+}
+
+/* ================= COMMON ================= */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#64748b;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:28px;
+}
+
+.category-btn{
+    border:none;
+    background:white;
+    color:#172033;
+    padding:10px 17px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:bold;
+    box-shadow:0 2px 10px rgba(0,0,0,.07);
+}
+
+.category-btn:hover,
+.category-btn.active{
+    background:#0b1220;
+    color:white;
+}
+
+/* ================= FILTER ================= */
+
+.filters{
+    display:flex;
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.search{
+    flex:1;
+}
+
+.search input,
+.filters select{
+    width:100%;
+    padding:13px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    background:white;
+    outline:none;
+}
+
+.search input:focus,
+.filters select:focus{
+    border-color:#38bdf8;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.card{
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.14);
+}
+
+.card-image{
+    height:220px;
+    position:relative;
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.card:hover img{
+    transform:scale(1.06);
+}
+
+.discount{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#ef4444;
+    color:white;
+    padding:5px 9px;
+    border-radius:5px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.wish{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:38px;
+    height:38px;
+    border:0;
+    border-radius:50%;
+    background:white;
+    cursor:pointer;
+    font-size:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+.card-body{
+    padding:18px;
+}
+
+.category{
+    color:#64748b;
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.card h3{
+    margin:6px 0;
+    font-size:18px;
+}
+
+.rating{
+    color:#f59e0b;
+    font-size:14px;
+}
+
+.price{
+    margin:12px 0;
+}
+
+.current{
+    font-size:21px;
+    font-weight:bold;
+}
+
+.old{
+    margin-left:8px;
+    color:#9ca3af;
+    text-decoration:line-through;
+    font-size:14px;
+}
+
+.buy{
+    width:100%;
+    padding:12px;
+    border:0;
+    border-radius:8px;
+    background:#0b1220;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.buy:hover{
+    background:#38bdf8;
+    color:#082f49;
+}
+
+/* ================= NO RESULTS ================= */
+
+.no-results{
+    display:none;
+    text-align:center;
+    padding:40px;
+}
+
+/* ================= HOW ================= */
+
+.how{
+    background:white;
+}
+
+.steps{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.step{
+    text-align:center;
+    background:#f8fafc;
+    padding:30px 20px;
+    border-radius:12px;
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.step h3{
+    margin-bottom:8px;
+}
+
+.step p{
+    color:#64748b;
+}
+
+/* ================= ABOUT ================= */
+
+.about-box{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.about-box p{
+    color:#64748b;
+    margin-bottom:15px;
+}
+
+/* ================= INFO PAGES ================= */
+
+.info-section{
+    background:#eef2f7;
+}
+
+.info-box{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 18px rgba(0,0,0,.06);
+}
+
+.info-box h3{
+    margin:20px 0 8px;
+}
+
+.info-box h3:first-child{
+    margin-top:0;
+}
+
+.info-box p{
+    color:#475569;
+    margin-bottom:12px;
+}
+
+.info-box ul{
+    padding-left:22px;
+    color:#475569;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-box{
+    max-width:650px;
+    margin:auto;
+}
+
+.contact-box form{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+}
+
+.contact-box label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+.contact-box input,
+.contact-box textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:7px;
+    margin-bottom:15px;
+    outline:none;
+}
+
+.contact-box textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.contact-btn{
+    width:100%;
+    padding:13px;
+    border:0;
+    border-radius:8px;
+    background:#0b1220;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#0b1220;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer h2{
+    margin-bottom:8px;
+}
+
+footer p{
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.footer-links{
+    margin:18px 0;
+}
+
+.footer-links a{
+    color:#38bdf8;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    z-index:3000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-box{
+    max-width:450px;
+    width:100%;
+    background:white;
+    padding:30px;
+    border-radius:14px;
+    text-align:center;
+}
+
+.modal-box h2{
+    margin-bottom:10px;
+}
+
+.modal-box p{
+    color:#64748b;
+    margin-bottom:20px;
+}
+
+.close{
+    padding:10px 20px;
+    border:0;
+    border-radius:7px;
+    cursor:pointer;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+    display:none;
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#0b1220;
+    color:white;
+    padding:13px 18px;
+    border-radius:8px;
+    z-index:4000;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1000px){
+
+    .products{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:750px){
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .hero{
+        min-height:420px;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .filters{
+        flex-direction:column;
+    }
+
+    .container{
+        padding:45px 15px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+🛍️ RABIZUL <span>STORE</span>
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#how">How It Works</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="badge">
+AFFILIATE SHOPPING
+</div>
+
+<h1>
+Smart Shopping with
+<span>RABIZUL STORE</span>
+</h1>
+
+<p>
+Discover useful products, explore deals and
+shop through trusted partner websites.
+</p>
+
+<a href="#products" class="hero-btn">
+Explore Products →
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================= DISCLOSURE ================= -->
+
+<div class="disclosure">
+
+<strong>Affiliate Disclosure:</strong>
+Some links on RABIZUL STORE are affiliate links.
+If you purchase through an affiliate link, we may earn
+a commission at no additional cost to you.
+
+</div>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="container" id="products">
+
+<div class="section-title">
+
+<h2>Featured Products</h2>
+
+<p>
+Explore our selected product recommendations.
+</p>
+
+</div>
+
+
+<!-- CATEGORIES -->
+
+<div class="categories">
+
+<button class="category-btn active"
+onclick="setCategory('All',this)">
+All
+</button>
+
+<button class="category-btn"
+onclick="setCategory('Electronics',this)">
+Electronics
+</button>
+
+<button class="category-btn"
+onclick="setCategory('Fashion',this)">
+Fashion
+</button>
+
+<button class="category-btn"
+onclick="setCategory('Home',this)">
+Home
+</button>
+
+<button class="category-btn"
+onclick="setCategory('Beauty',this)">
+Beauty
+</button>
+
+<button class="category-btn"
+onclick="setCategory('Accessories',this)">
+Accessories
+</button>
+
+</div>
+
+
+<!-- SEARCH / SORT -->
+
+<div class="filters">
+
+<div class="search">
+
+<input
+type="search"
+id="search"
+placeholder="🔎 Search products..."
+oninput="renderProducts()"
+>
+
+</div>
+
+<select id="sort" onchange="renderProducts()">
+
+<option value="default">
+Sort Products
+</option>
+
+<option value="low">
+Price: Low to High
+</option>
+
+<option value="high">
+Price: High to Low
+</option>
+
+<option value="rating">
+Highest Rating
+</option>
+
+<option value="discount">
+Highest Discount
+</option>
+
+</select>
+
+</div>
+
+
+<div class="products" id="productGrid"></div>
+
+
+<div class="no-results" id="noResults">
+
+<h3>No products found</h3>
+
+<p>
+Try another product name or category.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="how" id="how">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>How It Works</h2>
+
+<p>
+Shopping through RABIZUL STORE is simple.
+</p>
+
+</div>
+
+
+<div class="steps">
+
+<div class="step">
+
+<div class="icon">🔎</div>
+
+<h3>1. Discover</h3>
+
+<p>
+Browse our product recommendations and find something useful.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="icon">🛍️</div>
+
+<h3>2. Click Buy Now</h3>
+
+<p>
+Choose a product and click the Buy Now button.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="icon">🌐</div>
+
+<h3>3. Complete Purchase</h3>
+
+<p>
+You will visit the partner website to complete your purchase.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="container" id="about">
+
+<div class="section-title">
+
+<h2>About RABIZUL STORE</h2>
+
+</div>
+
+<div class="about-box">
+
+<p>
+RABIZUL STORE is an online product discovery and
+affiliate shopping website.
+</p>
+
+<p>
+Our goal is to help visitors discover useful products
+and make better shopping decisions.
+</p>
+
+<p>
+RABIZUL STORE does not directly sell, pack or deliver
+the products displayed on this website. Purchases are
+completed on third-party partner websites.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="container" id="contact">
+
+<div class="section-title">
+
+<h2>Contact Us</h2>
+
+<p>
+Have a question? Send us a message.
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<form onsubmit="sendMessage(event)">
+
+<label>
+Name
+</label>
+
+<input
+type="text"
+placeholder="Your Name"
+required
+>
+
+<label>
+Email
+</label>
+
+<input
+type="email"
+placeholder="Your Email"
+required
+>
+
+<label>
+Message
+</label>
+
+<textarea
+placeholder="Write your message..."
+required
+></textarea>
+
+<button class="contact-btn">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- ================= PRIVACY ================= -->
+
+<section class="info-section" id="privacy">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Privacy Policy</h2>
+
+</div>
+
+<div class="info-box">
+
+<h3>Information We Collect</h3>
+
+<p>
+RABIZUL STORE may receive information that you
+voluntarily provide when contacting us.
+</p>
+
+<h3>Cookies</h3>
+
+<p>
+This website may use browser storage or similar
+technologies to remember preferences such as wishlist items.
+</p>
+
+<h3>Third-Party Websites</h3>
+
+<p>
+When you click an affiliate link, you may be redirected
+to a third-party website. That website has its own privacy
+policy and terms.
+</p>
+
+<h3>Data Security</h3>
+
+<p>
+We take reasonable steps to protect information submitted
+through this website. However, no online system can be
+guaranteed to be completely secure.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= TERMS ================= -->
+
+<section class="container" id="terms">
+
+<div class="section-title">
+
+<h2>Terms & Conditions</h2>
+
+</div>
+
+<div class="info-box">
+
+<h3>Website Use</h3>
+
+<p>
+You may use RABIZUL STORE for personal and informational
+shopping purposes.
+</p>
+
+<h3>Product Information</h3>
+
+<p>
+Prices, availability, specifications and other product
+details may change on the third-party merchant website.
+</p>
+
+<h3>Purchases</h3>
+
+<p>
+RABIZUL STORE does not process payments, ship products or
+handle returns for purchases made through partner websites.
+</p>
+
+<h3>External Links</h3>
+
+<p>
+We may link to external websites. We are not responsible
+for the content, policies or services of third-party websites.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= DISCLAIMER ================= -->
+
+<section class="info-section" id="disclaimer">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Affiliate Disclaimer</h2>
+
+</div>
+
+<div class="info-box">
+
+<p>
+RABIZUL STORE participates in affiliate marketing.
+Some links on this website may be affiliate links.
+</p>
+
+<p>
+If you click an affiliate link and make an eligible
+purchase, RABIZUL STORE may receive a commission.
+</p>
+
+<p>
+This commission does not necessarily increase the price
+you pay.
+</p>
+
+<p>
+We aim to provide useful and honest product information,
+but visitors should verify current price, availability,
+features and terms on the merchant's website before buying.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h2>🛍️ RABIZUL STORE</h2>
+
+<p>
+Smart Shopping • Useful Products • Better Choices
+</p>
+
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+
+<a href="#products">Products</a>
+
+<a href="#about">About</a>
+
+<a href="#contact">Contact</a>
+
+<a href="#privacy">Privacy</a>
+
+<a href="#terms">Terms</a>
+
+<a href="#disclaimer">Disclaimer</a>
+
+</div>
+
+
+<p>
+© 2026 RABIZUL STORE. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<!-- ================= MODAL ================= -->
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<h2 id="modalTitle">
+Affiliate Link Missing
+</h2>
+
+<p id="modalText">
+The affiliate link for this product has not been added yet.
+</p>
+
+<button class="close" onclick="closeModal()">
+Close
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* =====================================================
+   PRODUCT DATABASE
+
+   IMPORTANT:
+   Put your REAL affiliate link inside affiliateLink.
+===================================================== */
+
+const products = [
+
+{
+id:1,
+name:"Smart Watch",
+category:"Electronics",
+price:1499,
+oldPrice:1999,
+rating:4.5,
+reviews:128,
+discount:25,
+image:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80",
+
+affiliateLink:""
+},
+
+{
+id:2,
+name:"Wireless Earbuds",
+category:"Electronics",
+price:999,
+oldPrice:1499,
+rating:4.4,
+reviews:96,
+discount:33,
+image:"https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=700&q=80",
+
+affiliateLink:""
+},
+
+{
+id:3,
+name:"Classic T-Shirt",
+category:"Fashion",
+price:599,
+oldPrice:799,
+rating:4.3,
+reviews:74,
+discount:25,
+image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80",
+
+affiliateLink:""
+},
+
+{
+id:4,
+name:"Sports Shoes",
+category:"Fashion",
+price:1999,
+oldPrice:2499,
+rating:4.7,
+reviews:156,
+discount:20,
+image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80",
+
+affiliateLink:""
+},
+
+{
+id:5,
+name:"Table Lamp",
+category:"Home",
+price:799,
+oldPrice:999,
+rating:4.2,
+reviews:51,
+discount:20,
+image:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=80",
+
+affiliateLink:""
+},
+
+{
+id:6,
+name:"Water Bottle",
+category:"Home",
+price:399,
+oldPrice:499,
+rating:4.1,
+reviews:43,
+discount:20,
+image:"https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=80",
+
+affiliateLink:""
+},
+
+{
+id:7,
+name:"Face Wash",
+category:"Beauty",
+price:299,
+oldPrice:399,
+rating:4.6,
+reviews:112,
+discount:25,
+image:"https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=700&q=80",
+
+affiliateLink:""
+},
+
+{
+id:8,
+name:"Backpack",
+category:"Accessories",
+price:899,
+oldPrice:1199,
+rating:4.5,
+reviews:87,
+discount:25,
+image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80",
+
+affiliateLink:""
+}
+
+];
+
+
+/* CURRENT CATEGORY */
+
+let currentCategory = "All";
+
+
+/* WISHLIST */
+
+let wishlist =
+JSON.parse(localStorage.getItem("rabizulWishlist") || "[]");
+
+
+/* =====================================================
+   RENDER PRODUCTS
+===================================================== */
+
+function renderProducts(){
+
+const grid =
+document.getElementById("productGrid");
+
+const search =
+document.getElementById("search")
+.value
+.toLowerCase()
+.trim();
+
+const sort =
+document.getElementById("sort")
+.value;
+
+
+let result = products.filter(product => {
+
+const categoryMatch =
+currentCategory === "All" ||
+product.category === currentCategory;
+
+const searchMatch =
+product.name.toLowerCase().includes(search);
+
+return categoryMatch && searchMatch;
+
+});
+
+
+/* SORT */
+
+if(sort === "low"){
+result.sort((a,b)=>a.price-b.price);
+}
+
+if(sort === "high"){
+result.sort((a,b)=>b.price-a.price);
+}
+
+if(sort === "rating"){
+result.sort((a,b)=>b.rating-a.rating);
+}
+
+if(sort === "discount"){
+result.sort((a,b)=>b.discount-a.discount);
+}
+
+
+/* NO RESULT */
+
+if(result.length === 0){
+
+grid.innerHTML="";
+
+document.getElementById("noResults")
+.style.display="block";
+
+return;
+
+}
+
+document.getElementById("noResults")
+.style.display="none";
+
+
+/* PRODUCT CARDS */
+
+grid.innerHTML = result.map(product => {
+
+const liked =
+wishlist.includes(product.id);
+
+return `
+
+<article class="card">
+
+<div class="card-image">
+
+<img
+src="${product.image}"
+alt="${product.name}"
+loading="lazy"
+>
+
+<div class="discount">
+-${product.discount}%
+</div>
+
+<button
+class="wish"
+onclick="toggleWishlist(${product.id},this)"
+aria-label="Add ${product.name} to wishlist"
+>
+${liked ? "♥" : "♡"}
+</button>
+
+</div>
+
+
+<div class="card-body">
+
+<div class="category">
+${product.category}
+</div>
+
+<h3>
+${product.name}
+</h3>
+
+<div class="rating">
+⭐ ${product.rating}
+<span style="color:#94a3b8">
+(${product.reviews} reviews)
+</span>
+</div>
+
+
+<div class="price">
+
+<span class="current">
+₹${product.price.toLocaleString("en-IN")}
+</span>
+
+<span class="old">
+₹${product.oldPrice.toLocaleString("en-IN")}
+</span>
+
+</div>
+
+
+<button
+class="buy"
+onclick="buyProduct(${product.id})"
+>
+Buy Now ↗
+</button>
+
+</div>
+
+</article>
+
+`;
+
+}).join("");
+
+}
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+function setCategory(category,button){
+
+currentCategory = category;
+
+document.querySelectorAll(".category-btn")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+button.classList.add("active");
+
+renderProducts();
+
+}
+
+
+/* =====================================================
+   AFFILIATE BUY BUTTON
+===================================================== */
+
+function buyProduct(id){
+
+const product =
+products.find(item=>item.id === id);
+
+
+if(!product){
+return;
+}
+
+
+/*
+   If affiliate link is empty,
+   show message.
+*/
+
+if(
+!product.affiliateLink ||
+product.affiliateLink.trim() === ""
+){
+
+document.getElementById("modalTitle")
+.innerText =
+"Affiliate Link Not Added";
+
+document.getElementById("modalText")
+.innerText =
+"The affiliate link for " +
+product.name +
+" has not been added yet. Add your real affiliate link in the product code.";
+
+document.getElementById("modal")
+.style.display="flex";
+
+return;
+
+}
+
+
+/*
+   Open merchant website.
+*/
+
+window.open(
+product.affiliateLink,
+"_blank",
+"noopener,noreferrer"
+);
+
+}
+
+
+/* =====================================================
+   WISHLIST
+===================================================== */
+
+function toggleWishlist(id,button){
+
+if(wishlist.includes(id)){
+
+wishlist =
+wishlist.filter(item=>item !== id);
+
+button.innerText="♡";
+
+showToast("Removed from wishlist");
+
+}else{
+
+wishlist.push(id);
+
+button.innerText="♥";
+
+showToast("Added to wishlist ❤️");
+
+}
+
+
+localStorage.setItem(
+"rabizulWishlist",
+JSON.stringify(wishlist)
+);
+
+}
+
+
+/* =====================================================
+   MODAL CLOSE
+===================================================== */
+
+function closeModal(){
+
+document.getElementById("modal")
+.style.display="none";
+
+}
+
+
+/* =====================================================
+   CONTACT FORM
+===================================================== */
+
+function sendMessage(event){
+
+event.preventDefault();
+
+showToast(
+"Thank you! Your message form is ready."
+);
+
+event.target.reset();
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(message){
+
+const toast =
+document.getElementById("toast");
+
+toast.innerText=message;
+
+toast.style.display="block";
+
+setTimeout(()=>{
+
+toast.style.display="none";
+
+},2200);
+
+}
+
+
+/* =====================================================
+   START WEBSITE
+===================================================== */
+
+renderProducts();
+
+</script>
+
+</body>
+</html>
